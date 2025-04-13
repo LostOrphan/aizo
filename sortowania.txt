@@ -1,0 +1,52 @@
+Sortowanie przez wstawianie wstawiajac od lewej stronym oraz szukając poprzez wyszukiwanie binarne
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 1 wartosc: 53 z pozycja 1 wartosc: 91
+Zamiana na pozycji: 0 wartosc:53 na wartosc: 53
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 2 wartosc: 80 z pozycja 2 wartosc: 91
+Zamiana na pozycji: 1 wartosc:80 na wartosc: 80
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 3 wartosc: 71 z pozycja 3 wartosc: 91
+Zamiana na pozycji: 2 wartosc: 91 z pozycja 2 wartosc: 80
+Zamiana na pozycji: 1 wartosc:71 na wartosc: 71
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 4 wartosc: 34 z pozycja 4 wartosc: 91
+Zamiana na pozycji: 3 wartosc: 91 z pozycja 3 wartosc: 80
+Zamiana na pozycji: 2 wartosc: 80 z pozycja 2 wartosc: 71
+Zamiana na pozycji: 1 wartosc: 71 z pozycja 1 wartosc: 53
+Zamiana na pozycji: 0 wartosc:34 na wartosc: 34
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 5 wartosc: 11 z pozycja 5 wartosc: 91
+Zamiana na pozycji: 4 wartosc: 91 z pozycja 4 wartosc: 80
+Zamiana na pozycji: 3 wartosc: 80 z pozycja 3 wartosc: 71
+Zamiana na pozycji: 2 wartosc: 71 z pozycja 2 wartosc: 53
+Zamiana na pozycji: 1 wartosc: 53 z pozycja 1 wartosc: 34
+Zamiana na pozycji: 0 wartosc:11 na wartosc: 11
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 6 wartosc: 88 z pozycja 6 wartosc: 91
+Zamiana na pozycji: 5 wartosc:88 na wartosc: 88
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 7 wartosc:97 na wartosc: 97
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 8 wartosc: 9 z pozycja 8 wartosc: 97
+Zamiana na pozycji: 7 wartosc: 97 z pozycja 7 wartosc: 91
+Zamiana na pozycji: 6 wartosc: 91 z pozycja 6 wartosc: 88
+Zamiana na pozycji: 5 wartosc: 88 z pozycja 5 wartosc: 80
+Zamiana na pozycji: 4 wartosc: 80 z pozycja 4 wartosc: 71
+Zamiana na pozycji: 3 wartosc: 71 z pozycja 3 wartosc: 53
+Zamiana na pozycji: 2 wartosc: 53 z pozycja 2 wartosc: 34
+Zamiana na pozycji: 1 wartosc: 34 z pozycja 1 wartosc: 11
+Zamiana na pozycji: 0 wartosc:9 na wartosc: 9
+-----------------------------------------------------------------------------------
+Zamiana na pozycji: 9 wartosc: 27 z pozycja 9 wartosc: 97
+Zamiana na pozycji: 8 wartosc: 97 z pozycja 8 wartosc: 91
+Zamiana na pozycji: 7 wartosc: 91 z pozycja 7 wartosc: 88
+Zamiana na pozycji: 6 wartosc: 88 z pozycja 6 wartosc: 80
+Zamiana na pozycji: 5 wartosc: 80 z pozycja 5 wartosc: 71
+Zamiana na pozycji: 4 wartosc: 71 z pozycja 4 wartosc: 53
+Zamiana na pozycji: 3 wartosc: 53 z pozycja 3 wartosc: 34
+Zamiana na pozycji: 2 wartosc:27 na wartosc: 27
+-----------------------------------------------------------------------------------
+Ilosc porownan: 0
+Ilosc przestawien: 38
+-----------------------------------------------------------------------------------
