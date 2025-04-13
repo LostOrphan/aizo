@@ -208,7 +208,7 @@ void sort4(int *tablica, int tablicaRozmiar){
 //parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
 void sort1(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzestawien){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
-    sortowania<<"Sortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od prawej strony czesci posortowanej\n";
+    sortowania<<"\nSortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od prawej strony czesci posortowanej\n";
     sortowania<<"-----------------------------------------------------------------------------------\n";
     for(int i=1; i<tablicaRozmiar; i++){ 
         int x=tablica[i];
@@ -216,12 +216,12 @@ void sort1(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzesta
         while(j>=0 && x<tablica[j]){ 
             iloscPorownan++;
             iloscPrzestawien++;
-            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j<<" wartosc: "<<tablica[j-1]<<"\n";
+            sortowania<<"Zamiana na pozycji: "<<j+1<<" wartosc: "<<tablica[j+1]<<" z pozycja "<<j<<" wartosc: "<<tablica[j]<<"\n";
             tablica[j+1]=tablica[j];
             j--;
         }
         tablica[j+1]=x;
-        sortowania<<"Zamiana na pozycji: "<<j<<" wartosc:"<<tablica[j+1]<<" na wartosc: "<<x<<"\n";
+        sortowania<<"Zamiana na pozycji: "<<j+1<<" wartosc:"<<tablica[j+1]<<" na wartosc: "<<x<<"\n";
         iloscPrzestawien++;
         sortowania<<"-----------------------------------------------------------------------------------\n";
     }
@@ -234,14 +234,14 @@ void sort1(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzesta
 //parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
 void sort2(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzestawien){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
-    sortowania<<"Sortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od lewej strony czesci posortowanej\n";
+    sortowania<<"\nSortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od lewej strony czesci posortowanej\n";
     for (int i=tablicaRozmiar-2; i>=0; i--) {
         int x=tablica[i];
         int j=i+1;
         while (j<tablicaRozmiar && x>tablica[j]) {
             iloscPorownan++;
             iloscPrzestawien++;
-            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j<<" wartosc: "<<tablica[j-1]<<"\n";
+            sortowania<<"Zamiana na pozycji: "<<j-1<<" wartosc: "<<tablica[j-1]<<" z pozycja "<<j<<" wartosc: "<<tablica[j]<<"\n";
             tablica[j-1]=tablica[j];
             j++;
         }
@@ -259,7 +259,7 @@ void sort2(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzesta
 //parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
 void sort3(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzestawien){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
-    sortowania<<"Sortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od lewej strony czesci posortowanej\n";
+    sortowania<<"\nSortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od lewej strony czesci posortowanej\n";
     for (int i=1; i<tablicaRozmiar; i++) {
         int x=tablica[i];
         int wstaw=0;
@@ -269,7 +269,7 @@ void sort3(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzesta
         }
         for (int j=i; j>wstaw; j--) {
             iloscPrzestawien++;
-            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j<<" wartosc: "<<tablica[j-1]<<"\n";
+            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j-1<<" wartosc: "<<tablica[j-1]<<"\n";
             tablica[j]=tablica[j-1];
         }
         tablica[wstaw]=x;
@@ -286,7 +286,7 @@ void sort3(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzesta
 //parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
 void sort4(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzestawien){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
-    sortowania<<"Sortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od prawej strony czesci posortowanej\n";
+    sortowania<<"\nSortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od prawej strony czesci posortowanej\n";
     for (int i=tablicaRozmiar-2; i>=0; i--) {
         int x=tablica[i];
         int wstaw=tablicaRozmiar-1;
@@ -296,7 +296,7 @@ void sort4(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzesta
         }
         for(int j=i; j<wstaw; j++){
             iloscPrzestawien++;
-            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j<<" wartosc: "<<tablica[j-1]<<"\n";
+            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j+1<<" wartosc: "<<tablica[j+1]<<"\n";
             tablica[j]=tablica[j+1];
         }
         tablica[wstaw]=x;
@@ -325,10 +325,10 @@ int wyszukiwanieBinarne(int *tablica, int x, int lewy, int prawy){
     while (lewy <= prawy) {
         int srodek=(lewy+prawy)/2;
         if (tablica[srodek]<x) {
-            iloscPorownan++;
+            (*iloscPorownan)++;
             lewy=srodek+1;
         } else {
-            iloscPorownan++;
+            (*iloscPorownan)++;
             prawy=srodek-1;
         }
     }
@@ -350,14 +350,14 @@ void binSort(int *tablica, int tablicaRozmiar){
 //parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
 void binSort(int *tablica, int tablicaRozmiar, int iloscPorownan, int iloscPrzestawien){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
-    sortowania<<"Sortowanie przez wstawianie wstawiajac od lewej stronym oraz szukając poprzez wyszukiwanie binarne\n";
+    sortowania<<"\nSortowanie przez wstawianie wstawiajac od lewej stronym oraz szukając poprzez wyszukiwanie binarne\n";
     sortowania<<"-----------------------------------------------------------------------------------\n";
     for (int i=1; i<tablicaRozmiar; i++) {
         int x=tablica[i];
         int wstaw=wyszukiwanieBinarne(tablica, x, 0, i-1, &iloscPorownan);
         for (int j=i; j>wstaw; j--) {
             iloscPrzestawien++;
-            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j<<" wartosc: "<<tablica[j-1]<<"\n";
+            sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j-1<<" wartosc: "<<tablica[j-1]<<"\n";
             tablica[j]=tablica[j-1];
         }
         tablica[wstaw]=x;
@@ -383,15 +383,16 @@ void wypisanieWynikow(double *czasySort1, double *czasySort2, double *czasySort3
         wyniki.close();
     }
 }
-//Funkcja wypisujaca tablice do pliku wyniki.txt
+//Funkcja wypisujaca tablice do pliku sortowania.txt
 //parametry: tablica - tablica do wypisania, tablicaRozmiar - rozmiar tablicy
 void wypiszTablice(int *tablica, int tablicaRozmiar){
-    std::ofstream wyniki("wyniki.txt", std::ios::app);
-    if(wyniki.is_open()){
+    std::ofstream sortowania("sortowania.txt", std::ios::app);
+    if(sortowania.is_open()){
+        sortowania<<"Tablica\n";
         for (int i=0;i<tablicaRozmiar;i++){
-            wyniki <<i<<tablica[i] << " | ";
+            sortowania <<i<<": "<<tablica[i] << " | ";
         }
-        wyniki.close();
+        sortowania.close();
     }
 }
 //Funkcja uzyta do wykonania testow zamieszczonych w sprawozdaniu
@@ -480,28 +481,40 @@ void testDzialanie(int tablicaRozmiar, int zakresGorny, int zakresDolny, int ilo
     int *tablicaZrodlo=new int[tablicaRozmiar];
     int *tablica=new int[tablicaRozmiar];
     wypelnijTablice(tablicaZrodlo, tablicaRozmiar, zakresGorny, zakresDolny);
+    std::ofstream sortowania("sortowania.txt");
+    sortowania.close();
+    wypiszTablice(tablicaZrodlo, tablicaRozmiar);
     for(int i=1;i<=5;i++){
-        std::ofstream sortowania("sortowania.txt");
-        sortowania.close();
         skopiujTablice(tablicaZrodlo, tablica, tablicaRozmiar);
         switch(i){
             case 1:
+                iloscPorownan=0;
+                iloscPrzestawien=0;
                 sort1(tablica, tablicaRozmiar, iloscPorownan, iloscPrzestawien);
                 break;
             case 2:
+                iloscPorownan=0;
+                iloscPrzestawien=0;
                 sort2(tablica, tablicaRozmiar, iloscPorownan, iloscPrzestawien);
                 break;
             case 3:
+                iloscPorownan=0;
+                iloscPrzestawien=0;
                 sort3(tablica, tablicaRozmiar, iloscPorownan, iloscPrzestawien);
                 break;
             case 4:
+                iloscPorownan=0;
+                iloscPrzestawien=0;
                 sort4(tablica, tablicaRozmiar, iloscPorownan, iloscPrzestawien);
                 break;
             case 5:
+                iloscPorownan=0;
+                iloscPrzestawien=0;
                 binSort(tablica, tablicaRozmiar, iloscPorownan, iloscPrzestawien);
                 break;
         }
-        std::cout<<"Ukonczono test nr: "<<i<<"z 5"<<std::endl;
+        wypiszTablice(tablica, tablicaRozmiar);
+        std::cout<<"Ukonczono test nr: "<<i<<" z 5"<<std::endl;
     }
 }
 int main() {
