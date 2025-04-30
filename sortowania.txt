@@ -1,229 +1,51 @@
-Tablica
-0: 10 | 1: 66 | 2: 62 | 3: 32 | 4: 61 | 5: 23 | 6: 56 | 7: 64 | 8: 20 | 9: 64 | 
-Sortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od prawej strony czesci posortowanej
-Zamiana na pozycji: 1 wartosc:66 na wartosc: 66
------------------------------------------------------------------------------------
-Zamiana na pozycji: 2 wartosc: 62 z pozycja 1 wartosc: 66
-Zamiana na pozycji: 1 wartosc:62 na wartosc: 62
------------------------------------------------------------------------------------
-Zamiana na pozycji: 3 wartosc: 32 z pozycja 2 wartosc: 66
-Zamiana na pozycji: 2 wartosc: 66 z pozycja 1 wartosc: 62
-Zamiana na pozycji: 1 wartosc:32 na wartosc: 32
------------------------------------------------------------------------------------
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 3 wartosc: 66
-Zamiana na pozycji: 3 wartosc: 66 z pozycja 2 wartosc: 62
-Zamiana na pozycji: 2 wartosc:61 na wartosc: 61
------------------------------------------------------------------------------------
-Zamiana na pozycji: 5 wartosc: 23 z pozycja 4 wartosc: 66
-Zamiana na pozycji: 4 wartosc: 66 z pozycja 3 wartosc: 62
-Zamiana na pozycji: 3 wartosc: 62 z pozycja 2 wartosc: 61
-Zamiana na pozycji: 2 wartosc: 61 z pozycja 1 wartosc: 32
-Zamiana na pozycji: 1 wartosc:23 na wartosc: 23
------------------------------------------------------------------------------------
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 5 wartosc: 66
-Zamiana na pozycji: 5 wartosc: 66 z pozycja 4 wartosc: 62
-Zamiana na pozycji: 4 wartosc: 62 z pozycja 3 wartosc: 61
-Zamiana na pozycji: 3 wartosc:56 na wartosc: 56
------------------------------------------------------------------------------------
-Zamiana na pozycji: 7 wartosc: 64 z pozycja 6 wartosc: 66
-Zamiana na pozycji: 6 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Zamiana na pozycji: 8 wartosc: 20 z pozycja 7 wartosc: 66
-Zamiana na pozycji: 7 wartosc: 66 z pozycja 6 wartosc: 64
-Zamiana na pozycji: 6 wartosc: 64 z pozycja 5 wartosc: 62
-Zamiana na pozycji: 5 wartosc: 62 z pozycja 4 wartosc: 61
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 3 wartosc: 56
-Zamiana na pozycji: 3 wartosc: 56 z pozycja 2 wartosc: 32
-Zamiana na pozycji: 2 wartosc: 32 z pozycja 1 wartosc: 23
-Zamiana na pozycji: 1 wartosc:20 na wartosc: 20
------------------------------------------------------------------------------------
-Zamiana na pozycji: 9 wartosc: 64 z pozycja 8 wartosc: 66
-Zamiana na pozycji: 8 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Ilosc porownan: 9
-Ilosc przestawien: 30
------------------------------------------------------------------------------------
-Tablica
-0: 10 | 1: 20 | 2: 23 | 3: 32 | 4: 56 | 5: 61 | 6: 62 | 7: 64 | 8: 64 | 9: 66 | 
-Sortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od lewej strony czesci posortowanej
-Zamiana na pozycji: 8 wartosc:20 na wartosc: 20
------------------------------------------------------------------------------------
-Zamiana na pozycji: 7 wartosc: 64 z pozycja 8 wartosc: 20
-Zamiana na pozycji: 8 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 7 wartosc: 20
-Zamiana na pozycji: 7 wartosc:56 na wartosc: 56
------------------------------------------------------------------------------------
-Zamiana na pozycji: 5 wartosc: 23 z pozycja 6 wartosc: 20
-Zamiana na pozycji: 6 wartosc:23 na wartosc: 23
------------------------------------------------------------------------------------
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 5 wartosc: 20
-Zamiana na pozycji: 5 wartosc: 20 z pozycja 6 wartosc: 23
-Zamiana na pozycji: 6 wartosc: 23 z pozycja 7 wartosc: 56
-Zamiana na pozycji: 7 wartosc:61 na wartosc: 61
------------------------------------------------------------------------------------
-Zamiana na pozycji: 3 wartosc: 32 z pozycja 4 wartosc: 20
-Zamiana na pozycji: 4 wartosc: 20 z pozycja 5 wartosc: 23
-Zamiana na pozycji: 5 wartosc:32 na wartosc: 32
------------------------------------------------------------------------------------
-Zamiana na pozycji: 2 wartosc: 62 z pozycja 3 wartosc: 20
-Zamiana na pozycji: 3 wartosc: 20 z pozycja 4 wartosc: 23
-Zamiana na pozycji: 4 wartosc: 23 z pozycja 5 wartosc: 32
-Zamiana na pozycji: 5 wartosc: 32 z pozycja 6 wartosc: 56
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 7 wartosc: 61
-Zamiana na pozycji: 7 wartosc:62 na wartosc: 62
------------------------------------------------------------------------------------
-Zamiana na pozycji: 1 wartosc: 66 z pozycja 2 wartosc: 20
-Zamiana na pozycji: 2 wartosc: 20 z pozycja 3 wartosc: 23
-Zamiana na pozycji: 3 wartosc: 23 z pozycja 4 wartosc: 32
-Zamiana na pozycji: 4 wartosc: 32 z pozycja 5 wartosc: 56
-Zamiana na pozycji: 5 wartosc: 56 z pozycja 6 wartosc: 61
-Zamiana na pozycji: 6 wartosc: 61 z pozycja 7 wartosc: 62
-Zamiana na pozycji: 7 wartosc: 62 z pozycja 8 wartosc: 64
-Zamiana na pozycji: 8 wartosc: 64 z pozycja 9 wartosc: 64
-Zamiana na pozycji: 9 wartosc:66 na wartosc: 66
------------------------------------------------------------------------------------
-Zamiana na pozycji: 0 wartosc:10 na wartosc: 10
------------------------------------------------------------------------------------
-Ilosc porownan: 9
-Ilosc przestawien: 30
------------------------------------------------------------------------------------
-Tablica
-0: 10 | 1: 20 | 2: 23 | 3: 32 | 4: 56 | 5: 61 | 6: 62 | 7: 64 | 8: 64 | 9: 66 | 
-Sortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od lewej strony czesci posortowanej
-Zamiana na pozycji: 1 wartosc:66 na wartosc: 66
------------------------------------------------------------------------------------
-Zamiana na pozycji: 2 wartosc: 62 z pozycja 1 wartosc: 66
-Zamiana na pozycji: 1 wartosc:62 na wartosc: 62
------------------------------------------------------------------------------------
-Zamiana na pozycji: 3 wartosc: 32 z pozycja 2 wartosc: 66
-Zamiana na pozycji: 2 wartosc: 66 z pozycja 1 wartosc: 62
-Zamiana na pozycji: 1 wartosc:32 na wartosc: 32
------------------------------------------------------------------------------------
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 3 wartosc: 66
-Zamiana na pozycji: 3 wartosc: 66 z pozycja 2 wartosc: 62
-Zamiana na pozycji: 2 wartosc:61 na wartosc: 61
------------------------------------------------------------------------------------
-Zamiana na pozycji: 5 wartosc: 23 z pozycja 4 wartosc: 66
-Zamiana na pozycji: 4 wartosc: 66 z pozycja 3 wartosc: 62
-Zamiana na pozycji: 3 wartosc: 62 z pozycja 2 wartosc: 61
-Zamiana na pozycji: 2 wartosc: 61 z pozycja 1 wartosc: 32
-Zamiana na pozycji: 1 wartosc:23 na wartosc: 23
------------------------------------------------------------------------------------
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 5 wartosc: 66
-Zamiana na pozycji: 5 wartosc: 66 z pozycja 4 wartosc: 62
-Zamiana na pozycji: 4 wartosc: 62 z pozycja 3 wartosc: 61
-Zamiana na pozycji: 3 wartosc:56 na wartosc: 56
------------------------------------------------------------------------------------
-Zamiana na pozycji: 7 wartosc: 64 z pozycja 6 wartosc: 66
-Zamiana na pozycji: 6 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Zamiana na pozycji: 8 wartosc: 20 z pozycja 7 wartosc: 66
-Zamiana na pozycji: 7 wartosc: 66 z pozycja 6 wartosc: 64
-Zamiana na pozycji: 6 wartosc: 64 z pozycja 5 wartosc: 62
-Zamiana na pozycji: 5 wartosc: 62 z pozycja 4 wartosc: 61
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 3 wartosc: 56
-Zamiana na pozycji: 3 wartosc: 56 z pozycja 2 wartosc: 32
-Zamiana na pozycji: 2 wartosc: 32 z pozycja 1 wartosc: 23
-Zamiana na pozycji: 1 wartosc:20 na wartosc: 20
------------------------------------------------------------------------------------
-Zamiana na pozycji: 9 wartosc: 64 z pozycja 8 wartosc: 66
-Zamiana na pozycji: 8 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Ilosc porownan: 33
-Ilosc przestawien: 30
------------------------------------------------------------------------------------
-Tablica
-0: 10 | 1: 20 | 2: 23 | 3: 32 | 4: 56 | 5: 61 | 6: 62 | 7: 64 | 8: 64 | 9: 66 | 
-Sortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od prawej strony czesci posortowanej
-Zamiana na pozycji: 8 wartosc:20 na wartosc: 20
------------------------------------------------------------------------------------
-Zamiana na pozycji: 7 wartosc: 64 z pozycja 8 wartosc: 20
-Zamiana na pozycji: 8 wartosc: 20 z pozycja 9 wartosc: 64
-Zamiana na pozycji: 9 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 7 wartosc: 20
-Zamiana na pozycji: 7 wartosc:56 na wartosc: 56
------------------------------------------------------------------------------------
-Zamiana na pozycji: 5 wartosc: 23 z pozycja 6 wartosc: 20
-Zamiana na pozycji: 6 wartosc:23 na wartosc: 23
------------------------------------------------------------------------------------
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 5 wartosc: 20
-Zamiana na pozycji: 5 wartosc: 20 z pozycja 6 wartosc: 23
-Zamiana na pozycji: 6 wartosc: 23 z pozycja 7 wartosc: 56
-Zamiana na pozycji: 7 wartosc:61 na wartosc: 61
------------------------------------------------------------------------------------
-Zamiana na pozycji: 3 wartosc: 32 z pozycja 4 wartosc: 20
-Zamiana na pozycji: 4 wartosc: 20 z pozycja 5 wartosc: 23
-Zamiana na pozycji: 5 wartosc:32 na wartosc: 32
------------------------------------------------------------------------------------
-Zamiana na pozycji: 2 wartosc: 62 z pozycja 3 wartosc: 20
-Zamiana na pozycji: 3 wartosc: 20 z pozycja 4 wartosc: 23
-Zamiana na pozycji: 4 wartosc: 23 z pozycja 5 wartosc: 32
-Zamiana na pozycji: 5 wartosc: 32 z pozycja 6 wartosc: 56
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 7 wartosc: 61
-Zamiana na pozycji: 7 wartosc:62 na wartosc: 62
------------------------------------------------------------------------------------
-Zamiana na pozycji: 1 wartosc: 66 z pozycja 2 wartosc: 20
-Zamiana na pozycji: 2 wartosc: 20 z pozycja 3 wartosc: 23
-Zamiana na pozycji: 3 wartosc: 23 z pozycja 4 wartosc: 32
-Zamiana na pozycji: 4 wartosc: 32 z pozycja 5 wartosc: 56
-Zamiana na pozycji: 5 wartosc: 56 z pozycja 6 wartosc: 61
-Zamiana na pozycji: 6 wartosc: 61 z pozycja 7 wartosc: 62
-Zamiana na pozycji: 7 wartosc: 62 z pozycja 8 wartosc: 64
-Zamiana na pozycji: 8 wartosc: 64 z pozycja 9 wartosc: 64
-Zamiana na pozycji: 9 wartosc:66 na wartosc: 66
------------------------------------------------------------------------------------
-Zamiana na pozycji: 0 wartosc:10 na wartosc: 10
------------------------------------------------------------------------------------
-Ilosc porownan: 32
-Ilosc przestawien: 31
------------------------------------------------------------------------------------
-Tablica
-0: 10 | 1: 20 | 2: 23 | 3: 32 | 4: 56 | 5: 61 | 6: 62 | 7: 64 | 8: 64 | 9: 66 | 
-Sortowanie przez wstawianie wstawiajac od lewej stronym oraz szukając poprzez wyszukiwanie binarne
-Zamiana na pozycji: 1 wartosc:66 na wartosc: 66
------------------------------------------------------------------------------------
-Zamiana na pozycji: 2 wartosc: 62 z pozycja 1 wartosc: 66
-Zamiana na pozycji: 1 wartosc:62 na wartosc: 62
------------------------------------------------------------------------------------
-Zamiana na pozycji: 3 wartosc: 32 z pozycja 2 wartosc: 66
-Zamiana na pozycji: 2 wartosc: 66 z pozycja 1 wartosc: 62
-Zamiana na pozycji: 1 wartosc:32 na wartosc: 32
------------------------------------------------------------------------------------
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 3 wartosc: 66
-Zamiana na pozycji: 3 wartosc: 66 z pozycja 2 wartosc: 62
-Zamiana na pozycji: 2 wartosc:61 na wartosc: 61
------------------------------------------------------------------------------------
-Zamiana na pozycji: 5 wartosc: 23 z pozycja 4 wartosc: 66
-Zamiana na pozycji: 4 wartosc: 66 z pozycja 3 wartosc: 62
-Zamiana na pozycji: 3 wartosc: 62 z pozycja 2 wartosc: 61
-Zamiana na pozycji: 2 wartosc: 61 z pozycja 1 wartosc: 32
-Zamiana na pozycji: 1 wartosc:23 na wartosc: 23
------------------------------------------------------------------------------------
-Zamiana na pozycji: 6 wartosc: 56 z pozycja 5 wartosc: 66
-Zamiana na pozycji: 5 wartosc: 66 z pozycja 4 wartosc: 62
-Zamiana na pozycji: 4 wartosc: 62 z pozycja 3 wartosc: 61
-Zamiana na pozycji: 3 wartosc:56 na wartosc: 56
------------------------------------------------------------------------------------
-Zamiana na pozycji: 7 wartosc: 64 z pozycja 6 wartosc: 66
-Zamiana na pozycji: 6 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Zamiana na pozycji: 8 wartosc: 20 z pozycja 7 wartosc: 66
-Zamiana na pozycji: 7 wartosc: 66 z pozycja 6 wartosc: 64
-Zamiana na pozycji: 6 wartosc: 64 z pozycja 5 wartosc: 62
-Zamiana na pozycji: 5 wartosc: 62 z pozycja 4 wartosc: 61
-Zamiana na pozycji: 4 wartosc: 61 z pozycja 3 wartosc: 56
-Zamiana na pozycji: 3 wartosc: 56 z pozycja 2 wartosc: 32
-Zamiana na pozycji: 2 wartosc: 32 z pozycja 1 wartosc: 23
-Zamiana na pozycji: 1 wartosc:20 na wartosc: 20
------------------------------------------------------------------------------------
-Zamiana na pozycji: 9 wartosc: 64 z pozycja 8 wartosc: 66
-Zamiana na pozycji: 8 wartosc: 66 z pozycja 7 wartosc: 64
-Zamiana na pozycji: 7 wartosc:64 na wartosc: 64
------------------------------------------------------------------------------------
-Ilosc porownan: 22
-Ilosc przestawien: 31
------------------------------------------------------------------------------------
-Tablica
-0: 10 | 1: 20 | 2: 23 | 3: 32 | 4: 56 | 5: 61 | 6: 62 | 7: 64 | 8: 64 | 9: 66 | 
+Test tablicy posortowanej rosnaco
+
+sortLP
+   Ilosc porownan: 999
+   Ilosc Przesuniec: 999
+sortPL
+   Ilosc porownan: 999
+   Ilosc Przesuniec: 999
+sortLL
+   Ilosc porownan: 500499
+   Ilosc Przesuniec: 999
+sortPP
+   Ilosc porownan: 500451
+   Ilosc Przesuniec: 1047
+binSort
+   Ilosc porownan: 8976
+   Ilosc Przesuniec: 1047
+
+Test tablicy posortowanej malejaco
+sortLP
+   Ilosc porownan: 500451
+   Ilosc Przesuniec: 500451
+sortPL
+   Ilosc porownan: 500451
+   Ilosc Przesuniec: 500451
+sortLL
+   Ilosc porownan: 1047
+   Ilosc Przesuniec: 500451
+sortPP
+   Ilosc porownan: 999
+   Ilosc Przesuniec: 500499
+binSort
+   Ilosc porownan: 7987
+   Ilosc Przesuniec: 500499
+
+Test tablicy posortowanej losowo (srednia ze 100 prob)
+sortLP
+   Ilosc porownan: 251374
+   Ilosc Przesuniec: 251374
+sortPL
+   Ilosc porownan: 251374
+   Ilosc Przesuniec: 251374
+sortLL
+   Ilosc porownan: 250124
+   Ilosc Przesuniec: 251374
+sortPP
+   Ilosc porownan: 250074
+   Ilosc Przesuniec: 251424
+binSort
+   Ilosc porownan: 8587.21
+   Ilosc Przesuniec:    

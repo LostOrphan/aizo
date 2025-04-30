@@ -9,7 +9,7 @@ void tryb(int *dzialanieTryb, int *wypisz){
     while(input!=0){
         std::cout<<"[1] - Test czasowy \n";
         std::cout<<"[2] - Test dzialania \n";
-        std::cout<<"[3] - Test ilosci porownan i przestawien\n";
+        std::cout<<"[3] - Test ilosci porownan i przesuniec\n";
         std::cout<<"[4] - Test pojedynczego sortowania \n";
         std::cout<<"[0] - Wyjscie \n";
         std::cin>>input;
@@ -214,12 +214,14 @@ void sortPP(int *tablica, int tablicaRozmiar){
         tablica[wstaw]=x;
     }
 }
-
+//
 //Funkcje sortowan z funkcja wypisywania do pliku
+//
+
 
 //Sortowanie przez wstawianie wstawiając od lewej strony tablicy oraz szukajac od prawej strony cześci posortowanej
-//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
-void sortLP(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrzestawien, int wypisz){
+//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzesuniec - ilosc Przesuniec
+void sortLP(int *tablica, int tablicaRozmiar, long long  *iloscPorownan, long long  *iloscPrzesuniec, int wypisz){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
     if(wypisz==1){
         sortowania<<"\nSortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od prawej strony czesci posortowanej\n";
@@ -227,19 +229,19 @@ void sortLP(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
     for(int i=1; i<tablicaRozmiar; i++){ 
         int x=tablica[i];
         int j=i-1; 
-        (*iloscPorownan)++;
+        // (*iloscPorownan)++;
         while(j>=0 && x<tablica[j]){ 
             if(wypisz==1){
                 sortowania<<"Zamiana na pozycji: "<<j+1<<" wartosc: "<<tablica[j+1]<<" z pozycja "<<j<<" wartosc: "<<tablica[j]<<"\n";
             }
             tablica[j+1]=tablica[j];
-            (*iloscPrzestawien)++;
-            // (*iloscPorownan)++;
+            (*iloscPrzesuniec)++;
+            (*iloscPorownan)++;
             j--;
         }
-        // (*iloscPorownan)++;
+        (*iloscPorownan)++;
         tablica[j+1]=x;
-        (*iloscPrzestawien)++;
+        (*iloscPrzesuniec)++;
         if(wypisz==1){   
             sortowania<<"Zamiana na pozycji: "<<j+1<<" wartosc:"<<tablica[j+1]<<" na wartosc: "<<x<<"\n";
             sortowania<<"-----------------------------------------------------------------------------------\n";
@@ -247,14 +249,14 @@ void sortLP(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
     }
     if(wypisz==1){
         sortowania<<"Ilosc porownan: "<<*iloscPorownan<<"\n";
-        sortowania<<"Ilosc przestawien: "<<*iloscPrzestawien<<"\n";
+        sortowania<<"Ilosc Przesuniec: "<<*iloscPrzesuniec<<"\n";
         sortowania<<"-----------------------------------------------------------------------------------\n";
     }
     sortowania.close();
 }
 //Sortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od lewej strony czesci posortowanej
-//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
-void sortPL(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrzestawien, int wypisz){
+//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzesuniec - ilosc Przesuniec
+void sortPL(int *tablica, int tablicaRozmiar, long long  *iloscPorownan, long long  *iloscPrzesuniec, int wypisz){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
     if(wypisz==1){
         sortowania<<"\nSortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od lewej strony czesci posortowanej\n";
@@ -262,18 +264,18 @@ void sortPL(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
     for (int i=tablicaRozmiar-2; i>=0; i--) {
         int x=tablica[i];
         int j=i+1;
-        (*iloscPorownan)++;
         while (j<tablicaRozmiar && x>tablica[j]) {
             if(wypisz==1){
                 sortowania<<"Zamiana na pozycji: "<<j-1<<" wartosc: "<<tablica[j-1]<<" z pozycja "<<j<<" wartosc: "<<tablica[j]<<"\n";
             }
             tablica[j-1]=tablica[j];
-            (*iloscPrzestawien)++;
+            (*iloscPorownan)++;
+            (*iloscPrzesuniec)++;
             j++;
         }
-        // (*iloscPorownan)++;
+        (*iloscPorownan)++;
         tablica[j-1]=x;
-        (*iloscPrzestawien)++;
+        (*iloscPrzesuniec)++;
         if(wypisz==1){   
             sortowania<<"Zamiana na pozycji: "<<j-1<<" wartosc:"<<tablica[j-1]<<" na wartosc: "<<x<<"\n";
             sortowania<<"-----------------------------------------------------------------------------------\n";
@@ -281,14 +283,14 @@ void sortPL(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
     }
     if(wypisz==1){
         sortowania<<"Ilosc porownan: "<<*iloscPorownan<<"\n";
-        sortowania<<"Ilosc przestawien: "<<*iloscPrzestawien<<"\n";
+        sortowania<<"Ilosc Przesuniec: "<<*iloscPrzesuniec<<"\n";
         sortowania<<"-----------------------------------------------------------------------------------\n";
     }
     sortowania.close();
 }
 //Sortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od lewej strony czesci posortowanej
-//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
-void sortLL(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrzestawien, int wypisz){
+//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzesuniec - ilosc Przesuniec
+void sortLL(int *tablica, int tablicaRozmiar, long long  *iloscPorownan, long long  *iloscPrzesuniec, int wypisz){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
     if(wypisz==1){
         sortowania<<"\nSortowanie przez wstawianie wstawiajac od lewej strony tablicy oraz szukajac od lewej strony czesci posortowanej\n";
@@ -306,10 +308,10 @@ void sortLL(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
                 sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j-1<<" wartosc: "<<tablica[j-1]<<"\n";
             }
             tablica[j]=tablica[j-1];
-            (*iloscPrzestawien)++;
+            (*iloscPrzesuniec)++;
         }
         tablica[wstaw]=x;
-        (*iloscPrzestawien)++;
+        (*iloscPrzesuniec)++;
         if(wypisz==1){
             sortowania<<"Zamiana na pozycji: "<<wstaw<<" wartosc:"<<tablica[wstaw]<<" na wartosc: "<<x<<"\n";
             sortowania<<"-----------------------------------------------------------------------------------\n";
@@ -317,14 +319,14 @@ void sortLL(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
     }
     if(wypisz==1){
         sortowania<<"Ilosc porownan: "<<*iloscPorownan<<"\n";
-        sortowania<<"Ilosc przestawien: "<<*iloscPrzestawien<<"\n";
+        sortowania<<"Ilosc Przesuniec: "<<*iloscPrzesuniec<<"\n";
         sortowania<<"-----------------------------------------------------------------------------------\n";
     }
     sortowania.close();
 }
 //Sortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od prawej strony czesci posortowanej
-//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
-void sortPP(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrzestawien, int wypisz){
+//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzesuniec - ilosc Przesuniec
+void sortPP(int *tablica, int tablicaRozmiar, long long  *iloscPorownan, long long  *iloscPrzesuniec, int wypisz){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
     if(wypisz==1){
         sortowania<<"\nSortowanie przez wstawianie wstawiajac od prawej strony tablicy oraz szukajac od prawej strony czesci posortowanej\n";
@@ -342,10 +344,10 @@ void sortPP(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
                 sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j+1<<" wartosc: "<<tablica[j+1]<<"\n";
             }
             tablica[j]=tablica[j+1];
-            (*iloscPrzestawien)++;
+            (*iloscPrzesuniec)++;
         }
         tablica[wstaw]=x;
-        (*iloscPrzestawien)++;
+        (*iloscPrzesuniec)++;
         if(wypisz==1){
             sortowania<<"Zamiana na pozycji: "<<wstaw<<" wartosc:"<<tablica[wstaw]<<" na wartosc: "<<x<<"\n";
             sortowania<<"-----------------------------------------------------------------------------------\n";
@@ -353,7 +355,7 @@ void sortPP(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrze
     }
     if(wypisz==1){
         sortowania<<"Ilosc porownan: "<<*iloscPorownan<<"\n";
-        sortowania<<"Ilosc przestawien: "<<*iloscPrzestawien<<"\n";
+        sortowania<<"Ilosc Przesuniec: "<<*iloscPrzesuniec<<"\n";
         sortowania<<"-----------------------------------------------------------------------------------\n";
     }
     sortowania.close();
@@ -370,7 +372,7 @@ int wyszukiwanieBinarne(int *tablica, int x, int lewy, int prawy){
         }
     }
     return lewy;
-}int wyszukiwanieBinarne(int *tablica, int x, int lewy, int prawy, int *iloscPorownan){
+}int wyszukiwanieBinarne(int *tablica, int x, int lewy, int prawy, long long  *iloscPorownan){
     while (lewy <= prawy) {
         int srodek=(lewy+prawy)/2;
         if (tablica[srodek]<x) {
@@ -396,8 +398,8 @@ void binSort(int *tablica, int tablicaRozmiar){
     }
 }
 //Sortowanie przez wstawianie wstawiając od lewej stronym oraz szukając poprzez wyszukiwanie binarne
-//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzestawien - ilosc przestawien
-void binSort(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrzestawien, int wypisz){
+//parametry: tablica - tablica do posortowania, tablicaRozmiar - rozmiar tablicy, iloscPorownan - ilosc porownan, iloscPrzesuniec - ilosc Przesuniec
+void binSort(int *tablica, int tablicaRozmiar, long long  *iloscPorownan, long long  *iloscPrzesuniec, int wypisz){
     std::ofstream sortowania("sortowania.txt", std::ios::app);
     if(wypisz==1){
         sortowania<<"\nSortowanie przez wstawianie wstawiajac od lewej stronym oraz szukając poprzez wyszukiwanie binarne\n";
@@ -410,10 +412,10 @@ void binSort(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrz
                 sortowania<<"Zamiana na pozycji: "<<j<<" wartosc: "<<tablica[j]<<" z pozycja "<<j-1<<" wartosc: "<<tablica[j-1]<<"\n";
             }
             tablica[j]=tablica[j-1];
-            (*iloscPrzestawien)++;
+            (*iloscPrzesuniec)++;
         }
         tablica[wstaw]=x;
-        (*iloscPrzestawien)++;
+        (*iloscPrzesuniec)++;
         if(wypisz==1){
             sortowania<<"Zamiana na pozycji: "<<wstaw<<" wartosc:"<<tablica[wstaw]<<" na wartosc: "<<x<<"\n";
             sortowania<<"-----------------------------------------------------------------------------------\n";
@@ -421,7 +423,7 @@ void binSort(int *tablica, int tablicaRozmiar, int *iloscPorownan, int *iloscPrz
     }
     if(wypisz==1){
         sortowania<<"Ilosc porownan: "<<*iloscPorownan<<"\n";
-        sortowania<<"Ilosc przestawien: "<<*iloscPrzestawien<<"\n";
+        sortowania<<"Ilosc Przesuniec: "<<*iloscPrzesuniec<<"\n";
         sortowania<<"-----------------------------------------------------------------------------------\n";
     }
     sortowania.close();
@@ -547,7 +549,7 @@ void testCzas(int tablicaRozmiar, int zakresGorny, int zakresDolny, int iloscPro
     }
     wypisanieWynikow(czasysortLP.data(), czasysortPL.data(), czasysortLL.data(), czasysortPP.data(), czasyBinSort.data(), rozmiarDanych.data(), rozmiarDanych.size());
 }
-void testDzialanie(int tablicaRozmiar, int zakresGorny, int zakresDolny, int &iloscPorownan, int iloscPrzestawien, int wypisz){
+void testDzialanie(int tablicaRozmiar, int zakresGorny, int zakresDolny, long long  &iloscPorownan, long long  iloscPrzesuniec, int wypisz){
     int *tablicaZrodlo=new int[tablicaRozmiar];
     int *tablica=new int[tablicaRozmiar];
     wypelnijTablice(tablicaZrodlo, tablicaRozmiar, zakresGorny, zakresDolny);
@@ -560,39 +562,38 @@ void testDzialanie(int tablicaRozmiar, int zakresGorny, int zakresDolny, int &il
             case 1:
                 
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 break;
             case 2:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 break;
             case 3:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 break;
             case 4:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 break;
             case 5:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 break;
         }
         wypiszTablice(tablica, tablicaRozmiar);
         std::cout<<"Ukonczono test nr: "<<i<<" z 5"<<std::endl;
     }
 }
-void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, int iloscPorownan, int iloscPrzestawien, int wypisz){
+void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, long long  iloscPorownan, long long  iloscPrzesuniec, int wypisz){
     int *tablicaZrodlo=new int[tablicaRozmiar];
     int *tablica=new int[tablicaRozmiar];
     std::ofstream sortowania("sortowania.txt");
-    // sortowania.close();
     //Test na tablicy posortowanej rosnaco
     wypelnijTablice(tablicaZrodlo, tablicaRozmiar, zakresGorny, zakresDolny);
     sortLP(tablicaZrodlo, tablicaRozmiar);
@@ -603,42 +604,42 @@ void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, int ilos
             case 0:
                 sortowania<<"\nsortLP\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 1:
                 sortowania<<"sortPL\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 2:
                 sortowania<<"sortLL\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 3: 
                 sortowania<<"sortPP\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 4:
                 sortowania<<"binSort\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
         }
     }
@@ -651,48 +652,48 @@ void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, int ilos
             case 0:
                 sortowania<<"sortLP\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 1:
                 sortowania<<"sortPL\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 2:
                 sortowania<<"sortLL\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 3: 
                 sortowania<<"sortPP\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
             case 4:
                 sortowania<<"binSort\n";
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 sortowania<<"   Ilosc porownan: "<<iloscPorownan<<"\n";
-                sortowania<<"   Ilosc przestawien: "<<iloscPrzestawien<<"\n";
+                sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniec<<"\n";
                 break;
         }
     }
     //Test na tablicy posortowanej losowo (sredni wynik ze 100 prob)
     double iloscPorownanSrednia[5]={0,0,0,0,0};
-    double iloscPrzestawienSrednia[5]={0,0,0,0,0};
+    double iloscPrzesuniecSrednia[5]={0,0,0,0,0};
     for(int i=0;i<100;i++){
         wyzerujTablice(tablicaZrodlo, tablicaRozmiar);
         wypelnijTablice(tablicaZrodlo, tablicaRozmiar, zakresGorny, zakresDolny);
@@ -701,38 +702,38 @@ void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, int ilos
         switch(j){
             case 0:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 iloscPorownanSrednia[j]+=iloscPorownan;
-                iloscPrzestawienSrednia[j]+=iloscPrzestawien;
+                iloscPrzesuniecSrednia[j]+=iloscPrzesuniec;
                 break;
             case 1:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 iloscPorownanSrednia[j]+=iloscPorownan;
-                iloscPrzestawienSrednia[j]+=iloscPrzestawien;
+                iloscPrzesuniecSrednia[j]+=iloscPrzesuniec;
                 break;
             case 2:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 iloscPorownanSrednia[j]+=iloscPorownan;
-                iloscPrzestawienSrednia[j]+=iloscPrzestawien;
+                iloscPrzesuniecSrednia[j]+=iloscPrzesuniec;
                 break;
             case 3: 
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 iloscPorownanSrednia[j]+=iloscPorownan;
-                iloscPrzestawienSrednia[j]+=iloscPrzestawien;
+                iloscPrzesuniecSrednia[j]+=iloscPrzesuniec;
                 break;
             case 4:
                 iloscPorownan=0;
-                iloscPrzestawien=0;
-                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+                iloscPrzesuniec=0;
+                binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
                 iloscPorownanSrednia[j]+=iloscPorownan;
-                iloscPrzestawienSrednia[j]+=iloscPrzestawien;
+                iloscPrzesuniecSrednia[j]+=iloscPrzesuniec;
                 break;
         }
       }
@@ -740,7 +741,7 @@ void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, int ilos
     //Srednia wynikow
     for(int i=0;i<5;i++){
         iloscPorownanSrednia[i]/=100;
-        iloscPrzestawienSrednia[i]/=100;
+        iloscPrzesuniecSrednia[i]/=100;
     }
     //Wypisanie wynikow do pliku
     sortowania<<"\nTest tablicy posortowanej losowo (srednia ze 100 prob)\n";
@@ -763,7 +764,7 @@ void testPorownan(int tablicaRozmiar, int zakresGorny, int zakresDolny, int ilos
                 break;
         }
         sortowania<<"   Ilosc porownan: "<<iloscPorownanSrednia[i]<<"\n";
-        sortowania<<"   Ilosc przestawien: "<<iloscPrzestawienSrednia[i]<<"\n";
+        sortowania<<"   Ilosc Przesuniec: "<<iloscPrzesuniecSrednia[i]<<"\n";
     }
     sortowania.close();
 }
@@ -779,8 +780,8 @@ int main() {
     int rozmiarMax=100;
 
     int wypisz=0;
-    int iloscPorownan=0;
-    int iloscPrzestawien=0;
+    long long  iloscPorownan=0;
+    long long  iloscPrzesuniec=0;
     tryb(&dzialanieTryb,&wypisz);
     ustawienia(&dzialanieTryb, &tablicaRozmiar, &zakresGorny, &zakresDolny, &rozmiarPoczatkowy, &rozmiarZwieksz, &rozmiarMax);
     switch(dzialanieTryb){
@@ -788,10 +789,10 @@ int main() {
             testCzas(tablicaRozmiar, zakresGorny, zakresDolny, iloscProb, rozmiarPoczatkowy, rozmiarZwieksz, rozmiarMax);
             break;
         case 2:
-            testDzialanie(tablicaRozmiar, zakresGorny, zakresDolny, iloscPorownan, iloscPrzestawien, wypisz);
+            testDzialanie(tablicaRozmiar, zakresGorny, zakresDolny, iloscPorownan, iloscPrzesuniec, wypisz);
             break;
         case 3:{
-            testPorownan(tablicaRozmiar, zakresGorny, zakresDolny, iloscPorownan, iloscPrzestawien, wypisz);
+            testPorownan(tablicaRozmiar, zakresGorny, zakresDolny, iloscPorownan, iloscPrzesuniec, wypisz);
             break;
 
         }
@@ -801,7 +802,7 @@ int main() {
             sortowania.close();
             wypelnijTablice(tablica, tablicaRozmiar, zakresGorny, zakresDolny);
             wypiszTablice(tablica, tablicaRozmiar);
-            sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+            sortLP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
             wypiszTablice(tablica, tablicaRozmiar);
             delete[] tablica;
             break;
@@ -812,7 +813,7 @@ int main() {
             sortowania.close();
             wypelnijTablice(tablica, tablicaRozmiar, zakresGorny, zakresDolny);
             wypiszTablice(tablica, tablicaRozmiar);
-            sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+            sortPL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
             wypiszTablice(tablica, tablicaRozmiar);
             delete[] tablica;
             break;
@@ -823,7 +824,7 @@ int main() {
             sortowania.close();
             wypelnijTablice(tablica, tablicaRozmiar, zakresGorny, zakresDolny);
             wypiszTablice(tablica, tablicaRozmiar);
-            sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+            sortLL(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
             wypiszTablice(tablica, tablicaRozmiar);
             delete[] tablica;
             break;
@@ -834,7 +835,7 @@ int main() {
             sortowania.close();
             wypelnijTablice(tablica, tablicaRozmiar, zakresGorny, zakresDolny);
             wypiszTablice(tablica, tablicaRozmiar);
-            sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+            sortPP(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
             wypiszTablice(tablica, tablicaRozmiar);
             delete[] tablica;
             break;
@@ -845,7 +846,7 @@ int main() {
             sortowania.close();
             wypelnijTablice(tablica, tablicaRozmiar, zakresGorny, zakresDolny);
             wypiszTablice(tablica, tablicaRozmiar);
-            binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzestawien, wypisz);
+            binSort(tablica, tablicaRozmiar, &iloscPorownan, &iloscPrzesuniec, wypisz);
             wypiszTablice(tablica, tablicaRozmiar);
             delete[] tablica;
             break;
